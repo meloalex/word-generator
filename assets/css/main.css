@@ -1,0 +1,415 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald:200,300,400,700&display=swap");
+@import url("fontawesome-all.min.css");
+
+/*
+	Miniport by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+
+html, body, div, span, applet, object,
+iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
+pre, a, abbr, acronym, address, big, cite,
+code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b,
+u, i, center, dl, dt, dd, ol, ul, li, fieldset,
+form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside,
+canvas, details, embed, figure, figcaption,
+footer, header, hgroup, menu, nav, output, ruby,
+section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+	blockquote:before, blockquote:after, q:before, q:after {
+		content: '';
+		content: none;
+	}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+	-webkit-text-size-adjust: none;
+}
+
+mark {
+	background-color: transparent;
+	color: inherit;
+}
+
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+input, select, textarea {
+
+}
+
+/* Basic */
+
+	html {
+		box-sizing: border-box;
+	}
+
+	*, *:before, *:after {
+		box-sizing: inherit;
+	}
+
+	body {
+		padding-top: 3.5em;
+	}
+
+	body, input, textarea, select {
+		font-family: 'Oswald', sans-serif;
+		line-height: 1.85em;
+		color: #888;
+		font-weight: 300;
+		font-size: 13pt;
+	}
+
+	a {
+		
+	}
+
+		a:hover {
+			color: #43bff0 !important;
+		}
+
+		a img {
+			border: 0;
+		}
+
+	b, strong {
+		font-weight: 600;
+		color: #3e3e3e;
+	}
+
+	i, em {
+		font-style: italic;
+	}
+
+	sub {
+		position: relative;
+		top: 0.5em;
+		font-size: 0.8em;
+	}
+
+	sup {
+		position: relative;
+		top: -0.5em;
+		font-size: 0.8em;
+	}
+
+	blockquote {
+		border-left: solid 0.75em #eee;
+		padding: 1em 0 1em 1.5em;
+		font-style: italic;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		color: #3e3e3e;
+		margin: 0 0 0.75em 0;
+	}
+
+	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	h2, h3, h4, h5, h6 {
+		font-weight: 700;
+	}
+
+	h1 {
+		font-size: 3.25em;
+		letter-spacing: -0.025em;
+		font-weight: 300;
+	}
+
+		h1 strong {
+			font-weight: 700;
+		}
+
+	h2 {
+		font-size: 2em;
+		letter-spacing: -0.015em;
+	}
+
+	h3 {
+		font-size: 1.5em;
+		letter-spacing: -0.015em;
+	}
+
+	em, i {
+		font-style: italic;
+	}
+
+	br.clear {
+		clear: both;
+	}
+
+	hr {
+		border: 0;
+		border-top: solid 1px #444;
+		border-top-color: rgba(0, 0, 0, 0.35);
+		box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.1);
+		height: 1px;
+		margin: 3em 0;
+	}
+
+	p, ul, ol, dl, table {
+		margin-bottom: 2em;
+	}
+
+	header {
+		margin: 0 0 3em 0;
+	}
+
+		header > p {
+			font-size: 1.25em;
+			margin: 0;
+		}
+
+	footer {
+		margin: 3em 0 0 0;
+	}
+
+		footer > p {
+			font-size: 1.25em;
+		}
+
+/* Container */
+
+	.container {
+		margin: 0 auto;
+		max-width: calc(100% - 50px);
+		width: 1200px;
+	}
+
+		.container.medium {
+			width: 900px;
+		}
+
+		@media screen and (max-width: 1680px) {
+
+			.container {
+				width: 1200px;
+			}
+
+				.container.medium {
+					width: 900px;
+				}
+
+		}
+
+		@media screen and (max-width: 1280px) {
+
+			.container {
+				width: 960px;
+			}
+
+				.container.medium {
+					width: 720px;
+				}
+
+		}
+
+		@media screen and (max-width: 980px) {
+
+			.container {
+				width: 100%;
+			}
+
+				.container.medium {
+					width: 75%;
+				}
+
+		}
+
+		@media screen and (max-width: 736px) {
+
+			.container {
+				width: 100%;
+				max-width: calc(100% - 30px);
+			}
+
+				.container.medium {
+					width: 100%;
+				}
+
+		}
+
+
+/* Form */
+
+	form label {
+		color: #3e3e3e;
+		font-weight: 700;
+		display: block;
+		margin: 0 0 0.5em 0;
+	}
+
+	form input[type=text],
+	form input[type=email],
+	form input[type=password],
+	form select,
+	form textarea {
+		-moz-transition: background .2s ease-in-out, box-shadow .2s ease-in-out;
+		-webkit-transition: background .2s ease-in-out, box-shadow .2s ease-in-out;
+		-ms-transition: background .2s ease-in-out, box-shadow .2s ease-in-out;
+		transition: background .2s ease-in-out, box-shadow .2s ease-in-out;
+		-webkit-appearance: none;
+		display: block;
+		border: 0;
+		padding: 0.75em;
+		font-size: 1em;
+		border-radius: 8px;
+		border: solid 1px #ddd;
+		background: #fff;
+		color: #bbb;
+		box-shadow: inset 0px 2px 3px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(255, 255, 255, 0.025);
+		width: 100%;
+	}
+
+		form input[type=text]:focus,
+		form input[type=email]:focus,
+		form input[type=password]:focus,
+		form select:focus,
+		form textarea:focus {
+			background: #fafafa;
+			box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(255, 255, 255, 0.025), inset 0px 0px 2px 1px #43bff0;
+		}
+
+	form textarea {
+		height: 15em;
+	}
+
+	form .actions:last-child {
+		margin-bottom: 0;
+	}
+
+	form ::-webkit-input-placeholder {
+		color: #555 !important;
+	}
+
+	form :-moz-placeholder {
+		color: #555 !important;
+	}
+
+	form ::-moz-placeholder {
+		color: #555 !important;
+	}
+
+	form :-ms-input-placeholder {
+		color: #555 !important;
+	}
+
+	form ::-moz-focus-inner {
+		border: 0;
+	}
+
+/* Nav */
+
+	#nav {
+		background-color: #282828;
+		text-align: center;
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100%;
+		z-index: 10000;
+		cursor: default;
+		height: 3.5em;
+		line-height: 3.5em;
+	}
+
+		#nav ul {
+			margin-bottom: 0;
+			list-style: none;
+			padding-left: 0;
+		}
+
+		#nav li {
+			display: inline-block;
+			padding-left: 0;
+		}
+
+		#nav a {
+			-moz-transition: background-color .2s ease-in-out;
+			-webkit-transition: background-color .2s ease-in-out;
+			-ms-transition: background-color .2s ease-in-out;
+			transition: background-color .2s ease-in-out;
+			position: relative;
+			display: block;
+			color: #fff;
+			text-decoration: none;
+			outline: 0;
+			font-weight: 300;
+			border-radius: 8px;
+			color: #fff;
+			height: 2.5em;
+			line-height: 2.5em;
+			padding: 0 1.25em;
+			font-size:22px;
+		}
+
+			#nav a:hover {
+				color: #fff !important;
+				background: #383838;
+			}
+
+			#nav a.active {
+				background: #484848;
+			}
+
+				#nav a.active:before {
+					content: '';
+					display: block;
+					position: absolute;
+					bottom: -0.6em;
+					left: 50%;
+					margin-left: -0.75em;
+					border-left: solid 0.75em transparent;
+					border-right: solid 0.75em transparent;
+					border-top: solid 0.6em #282828;
+				}
+
+/* Word */
+.logo {text-align: center; overflow: hidden;}
+.words {text-align: center; overflow: hidden;}
+	.words h2 { font-size:60px; font-weight:300; text-transform: uppercase; color: #e1464a; margin:70px 0px 0px; line-height: 70px;}
+	.words button { padding:20px 40px; margin:60px auto 0px; background-color: #e1464a; display: block; width:50%; color:#fff; font-size:28px; text-decoration: none; ransition:all 400ms ease 0s; -webkit-transition:all 400ms ease 0s; -o-transition:all 400ms ease 0s; -moz-transition:all 400ms ease 0s; -ms-transition:all 400ms ease 0s; transition:all 400ms ease 0s; font-family: 'Oswald', sans-serif; font-weight:300; border:none;}
+	.words button:hover { background-color: #ffa1a3; color:#e1464a !important; cursor: pointer;}
+.filters { text-align: center; overflow: hidden; margin:50px 0px 0px;}
+	.filters h3 { font-size:38px; color:#e1464a; font-weight:300; border-top:1px solid #e1464a; border-bottom:1px solid #e1464a; padding:10px 0px;}
+	.filters ul li { display: inline; margin:0px 20px;}
+	input[type="checkbox"] { display:none; }
+		input[type="checkbox"] + label span { display:inline-block;	width:19px; height:19px; margin:-1px 4px 0 0; vertical-align:middle; background:url(images/check_radio_sheet.png) left top no-repeat; cursor:pointer;}
+		input[type="checkbox"]:checked + label span { background:url(images/check_radio_sheet.png) -19px top no-repeat; }
+.add { position: fixed; bottom:30px; right:40px; overflow: hidden; }
+	.add .plus {background: url(images/plus.png) center center;  width:107px; height:107px; display: block;}
+	.add .plus span {display:none;}
