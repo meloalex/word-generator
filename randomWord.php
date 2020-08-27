@@ -14,19 +14,13 @@
 
     // Receive Data from ajax
     $levels = json_decode($_GET["l"]);      
-    $category = json_decode($_GET["c"]);
+    $categories = json_decode($_GET["c"]);
 
-    // Increment each value to match db key
-    foreach ($levels as $k => &$val)
-        $val = $val + 1;
     $levelsStr = implode(", ", $levels);
-
-    foreach ($category as $k => &$val)
-        $val = $val + 1;
-    $categoryStr = implode(", ", $category);
+    $categoriesStr = implode(", ", $categories);
 
     // Get Random Word
-    $sql = "SELECT * FROM Words WHERE category IN(" . $categoryStr . ") AND level IN (" . $levelsStr . ") ORDER BY RAND() LIMIT 1";
+    $sql = "SELECT * FROM Words WHERE category IN(" . $categoriesStr . ") AND level IN (" . $levelsStr . ") ORDER BY RAND() LIMIT 1";
     $result = $conn->query($sql);
 
     // If result, print it

@@ -40,28 +40,18 @@
 					<h3>LEVEL</h3>
 					<ul>
 						<?php
-							$sql = "SELECT level FROM Levels";
+							$sql = "SELECT * FROM Levels";
 							$result = mysqli_query($conn, $sql);
 
 							while ($row = $result->fetch_assoc()) {
-								echo '<li><input name="level" type="checkbox" id="' . $row['level'] . '" /><label for="' . $row['level'] . '"><span></span>' . $row['level'] . '</label></li>';
+								echo '<li><input name="level" onclick="generateFilters()" type="checkbox" id="' . $row['id'] . '" /><label for="' . $row['id'] . '"><span></span>' . $row['level'] . '</label></li>';
 							}
 						?>
 					</ul>
 					
 					<h3>FILTERS</h3>
-					<ul>
-						<?php
-							$sql = "SELECT category FROM Category";
-							$result = mysqli_query($conn, $sql);
-
-							while ($row = $result->fetch_assoc()) {
-								echo '<li><input name="category" type="checkbox" id="' . $row['category'] . '" /><label for="' . $row['category'] . '"><span></span>' . $row['category'] . '</label></li>';
-							}
-
-							$conn->close();
-						?>
-					</ul>
+					<div id="filters">
+					</div>
 					
 				</div>
 				<div class="add">
@@ -71,7 +61,8 @@
 
 		<!-- Scripts -->
 			<script>
-				function getRandomWord() {
+				function getRandomWord() 
+				{
 					var xhttp = new XMLHttpRequest();
 
 					// Get CheckBoxes
@@ -85,13 +76,13 @@
 					for (var i = 0; i < levelCboxes.length; i++)
 					{
 						if (levelCboxes[i].checked)
-							levelValues.push(i);
+							levelValues.push(levelCboxes[i].id);
 					}
 
 					for (var i = 0; i < categoryCboxes.length; i++)
 					{
 						if (categoryCboxes[i].checked)
-							categoryValues.push(i);
+							categoryValues.push(categoryCboxes[i].id);
 					}
 
 					// Update text on receive
@@ -107,6 +98,36 @@
 
 					// Send data
 					xhttp.open("GET", "randomWord.php?l=" + levelValuesStr + "&c=" + categoryValuesStr, true);
+					xhttp.send();
+				}
+
+				function generateFilters()
+				{
+					var xhttp = new XMLHttpRequest();
+
+					var levelCboxes = document.getElementsByName('level');
+
+					var levelValues = new Array();
+
+					// Get checkboxes values
+					for (var i = 0; i < levelCboxes.length; i++)
+					{
+						if (levelCboxes[i].checked)
+							levelValues.push(i);
+					}
+
+					// Update text on receive
+					xhttp.onreadystatechange = function() {
+						if (this.readyState == 4 && this.status == 200) {
+							document.getElementById("filters").innerHTML = this.responseText;
+						}
+					};
+
+					// JSON encode data
+					var levelValuesStr = JSON.stringify(levelValues);
+
+					// Send data
+					xhttp.open("GET", "filters.php?l=" + levelValuesStr, true);
 					xhttp.send();
 				}
     		</script>
